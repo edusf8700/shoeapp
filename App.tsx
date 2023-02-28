@@ -4,7 +4,7 @@ import { Roboto_400Regular, Roboto_700Bold, useFonts } from '@expo-google-fonts/
 import { Loading } from './src/components/Loading';
 
 import { THEME } from './src/theme';
-import { Home } from './src/screens/Home';
+import { Routes } from './src/routes';
 
 export default function App() {
 
@@ -13,7 +13,7 @@ export default function App() {
   return (
     <NativeBaseProvider theme={THEME}>
       <StatusBar style="auto" />
-      { fontsLoaded ? <Home/> : <Loading/> }  
+      { fontsLoaded ? <Routes/> : <Loading/> }  
     </NativeBaseProvider>
   );
 }
