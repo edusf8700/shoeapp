@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import { FlatList } from 'native-base';
 import { Product, ProductProps } from './Product';
 
@@ -6,6 +7,8 @@ type Props = {
 };
 
 export function Products({ products }: Props) {
+  const { navigate } = useNavigation();
+  
   return (
     <FlatList
       data={products}
@@ -13,6 +16,7 @@ export function Products({ products }: Props) {
       renderItem={({ item })=> (
         <Product 
           product={item}
+          onPress={()=>navigate('Details', { productId: item.id})}
         />
       )}
       _contentContainerStyle={{ px: 8, paddingBottom: 10 }}
